@@ -1,37 +1,3 @@
-# WhisperMultitaskFinetuning
-Whisper语音大模型的多任务微调，目前支持如下任务
- 1. 多语种的**转录**（ASR）
- 2. 多语种到英文的**翻译**任务（AST）
-## 安装
- - 克隆此代码
-```markdown
-git clone https://github.com/YLQY/WhisperMultitaskFinetuning.git
-```
- - 安装Conda请参考 [https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html)
- - 创建Conda环境
-```markdown
-conda create -n whisper python=3.8
-conda activate whisper
-```
- - 配置环境 - 有一个命令会运行很久，中途可能会断掉，请多尝试
-```markdown
-bash set_env.sh
-```
- - 下载Whisper_large_v2模型（大概需要一晚上）
-```markdown
-git clone https://huggingface.co/openai/whisper-large-v2
-cd whisper-large-v2
-git lfs fetch
-git lfs checkout
-```
-### PS
- - 也可以用Whisper_Base模型做尝试
-```markdown
-git clone https://huggingface.co/openai/whisper-base
-cd whisper-base
-git lfs fetch
-git lfs checkout
-```
 ## 案例1：在Whisper上同时微调转录与翻译任务
 ```markdown
 cp -r whisper example/aishell-sample/
@@ -52,7 +18,7 @@ cd example/aishell-sample
 | BAC009S0150W0001 |  chinese  | translate |
 | BAC009S0150W0001 |  chinese  | transcribe |
 ```markdown
-# 模型总共训练数据 - 将翻译和转录的数据合并为一个整体
+# 模型总共训练数据
 cat data/transcribe/wav.scp data/translate/wav.scp > data/wav.scp
 cat data/transcribe/text data/translate/text > data/text
 ```
@@ -132,7 +98,3 @@ convert_finetuning_peft_model_into_whisper(
   out_ctranslate_path = config['dev_env']['ctranslate_model_path']
 )
 ```
-<!--
-## 讨论交流群
- <img src=https://github.com/YLQY/WhisperMultitaskFinetuning/blob/main/res/qq.jpg width=40% /> -->
-
