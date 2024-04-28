@@ -21,7 +21,7 @@ dev_env:
   ctranslate_model_path: "C://Users//pony//Desktop//WhisperMultitaskFinetuning//example//aishell-sample//ctranslate"
   conf:
     # ['cuda','cpu']
-    device: "cpu"
+    device: "cuda"
     # ['float16','int8_float16(run on GPU with INT8)','int8']
     compute_type: "float32"
   result_file: "./data/result_fast"
@@ -41,7 +41,7 @@ model:
     per_device_train_batch_size: 1
     per_device_eval_batch_size: 1
     gradient_accumulation_steps: 1
-    num_train_epochs: 1
+    num_train_epochs: 5
     learning_rate: 0.0001
     logging_steps: 2
     fp16: False
