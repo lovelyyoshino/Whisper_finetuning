@@ -5,7 +5,7 @@ Whisper语音大模型的多任务微调，目前支持如下任务
 ## 安装
  - 克隆此代码
 ```markdown
-git clone https://github.com/YLQY/WhisperMultitaskFinetuning.git
+git clone https://github.com/lovelyyoshino/Whisper_finetuning.git
 ```
  - 安装Conda请参考 [https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html)
  - 创建Conda环境
@@ -132,7 +132,4 @@ convert_finetuning_peft_model_into_whisper(
   out_ctranslate_path = config['dev_env']['ctranslate_model_path']
 )
 ```
-<!--
-## 讨论交流群
- <img src=https://github.com/YLQY/WhisperMultitaskFinetuning/blob/main/res/qq.jpg width=40% /> -->
 
